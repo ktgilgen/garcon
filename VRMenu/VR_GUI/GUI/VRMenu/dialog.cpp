@@ -16,11 +16,12 @@ Dialog::Dialog(QWidget *parent) :
     ui->treeView->setModel(model);
 
     QModelIndex index = model->index("/home");
-    ui->treeView->expand(index);
+    /*ui->treeView->expand(index);
     ui->treeView->scrollTo(index);
     ui->treeView->setCurrentIndex(index);
-    ui->treeView->resizeColumnToContents(0);}
-
+    ui->treeView->resizeColumnToContents(0);*/
+    ui->treeView->setRootIndex(index);
+}
 Dialog::~Dialog()
 {
     delete ui;
@@ -35,7 +36,7 @@ void Dialog::on_pushButton_clicked()
     //get the name of the selected file
     //std::string pathSelected;
     Dialog::selectedPath = (model->filePath(index) );
-    qDebug() << ( selectedPath);
+    qDebug() << (selectedPath);
 
     //get the app info using path
 
