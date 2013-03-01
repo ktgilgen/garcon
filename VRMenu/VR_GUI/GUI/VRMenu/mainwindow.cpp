@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "dialog.h"
 #include"editApp.h"
 #include<stdlib.h>
 
@@ -100,6 +101,13 @@ void MainWindow::on_add_clicked() {
     //get the app that is selected
     AppInfo changedApp;
 
+    //testing the directory explore
+    Dialog *dirBox = new Dialog();
+    //dirBox->setApp(changedApp);
+
+    connect( dirBox, SIGNAL(destroyed()), this, SLOT(update()) );
+    dirBox->show();
+    /*
     //create editWindow and set the app
     EditApp *editInfo = new EditApp();
     editInfo->setApp(changedApp);
@@ -108,7 +116,7 @@ void MainWindow::on_add_clicked() {
     connect(editInfo, SIGNAL(destroyed()), this, SLOT(update()) );
     //run it
     editInfo->show();
-
+    */
 }
 
 

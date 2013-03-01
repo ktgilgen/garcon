@@ -14,14 +14,17 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     ../../garcon/src/AppInfo.cpp \
     ../../garcon/src/AppManager.cpp \
-    editApp.cpp
+    editApp.cpp \
+    dialog.cpp \
 
 HEADERS  += mainwindow.h \
     ../../garcon/src/AppInfo.h \
     ../../garcon/src/AppManager.h \
-    editApp.h
+    editApp.h \
+    dialog.h
 
 FORMS    += mainwindow.ui \
-    editApp.ui
+    editApp.ui \
+    dialog.ui
 
 QMAKE_CXXFLAGS += -std=c++0x

@@ -69,6 +69,8 @@ bool AppManager::getApp(ifstream &fileIn, AppInfo &app) {
         else if(buffer == '&') {
             attribute.second = value;
             value.clear();
+
+            //not going to add an initial app
             setAttribute(attribute, app);
         }
         else if(buffer != '\n') {

@@ -5,6 +5,7 @@
 #include<iostream>
 #include<unordered_map>
 #include<string>
+#include <QtCore>
 #include<vector>
 
 using namespace std;
@@ -20,6 +21,7 @@ class AppManager { /*IMPLEMENTED AS SINGLETON*/
      void addApp(AppInfo app);
      void removeApp(string appName);
      AppInfo getAppInfo(string appName);
+     void setString ( QString name);
      void quit(); 
 
 
@@ -34,5 +36,6 @@ class AppManager { /*IMPLEMENTED AS SINGLETON*/
      unordered_map<string, AppInfo> apps;
      string GARCON_RC; //should be in the home directory
      bool GARCON_RC_VERIFIED;
+     QString selectedPath;
 };
 #endif
