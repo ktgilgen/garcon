@@ -19,6 +19,7 @@ class AppManager { /*IMPLEMENTED AS SINGLETON*/
      bool runApp(string appName); //run app
 
      void addApp(AppInfo app);
+     bool getApp(ifstream &, AppInfo &); //used in parsing .garconrc
      void removeApp(string appName);
      AppInfo getAppInfo(string appName);
      void setString ( QString name);
@@ -28,7 +29,6 @@ class AppManager { /*IMPLEMENTED AS SINGLETON*/
    private:
       AppManager();//constructor
      ~AppManager();//destructor
-      bool getApp(ifstream &, AppInfo &); //used in parsing .garconrc
       void setAttribute(pair<string, string> &, AppInfo&); //set an attribute to an AppInfo
       void saveApps();
 
@@ -36,6 +36,5 @@ class AppManager { /*IMPLEMENTED AS SINGLETON*/
      unordered_map<string, AppInfo> apps;
      string GARCON_RC; //should be in the home directory
      bool GARCON_RC_VERIFIED;
-     QString selectedPath;
 };
 #endif
