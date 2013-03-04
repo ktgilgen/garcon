@@ -40,7 +40,7 @@ void Dialog::on_pushButton_clicked()
 
     //get file
     QString fileName = selectedPath;
-    fileName += QLatin1String("/.garconrc");
+    fileName += QLatin1String("/.garcon");
     std::string fileString = fileName.toStdString().c_str();
 
     // set up file reader
