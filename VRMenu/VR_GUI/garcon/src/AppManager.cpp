@@ -117,9 +117,14 @@ void AppManager::getAppList(vector<string> &appList) {
 
 //assuming that the app exists in the system TODO: get rid of this assumption
 bool AppManager::runApp(string appName) {
-   if( system( (apps[appName].getPathToBash()).c_str()) ) //if app could not run
-      return false;
-   return true;
+    //start new stuff
+        std::string gnome = "gnome-terminal -x sh -c ";
+        std::string programPath = apps[appName].getPathToBash();
+        std::string quote = "\"";
+        std::string runCmd = gnome + quote + programPath + quote;
+       if( system( runCmd.c_str()) ) //if app could not run
+          return false;
+       return true;
 }
 
 //assuming that the app exists in the system TODO: get rid of this assumption
