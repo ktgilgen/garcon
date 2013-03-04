@@ -5,6 +5,9 @@
 #include <QtCore>
 #include<string>
 #include <QtGui>
+#include"../../garcon/src/AppManager.h"
+#include "../../garcon/src/AppInfo.h"
+
 
 namespace Ui {
 class Dialog;
@@ -27,6 +30,7 @@ private:
     Ui::Dialog *ui;
     QDirModel *model;
     QString selectedPath;
+    AppManager *manager;
 };
 
 #endif // DIALOG_H
