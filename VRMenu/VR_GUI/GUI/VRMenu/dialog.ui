@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>864</width>
-    <height>506</height>
+    <height>687</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>30</y>
+     <y>190</y>
      <width>831</width>
      <height>421</height>
     </rect>
@@ -27,7 +27,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>460</y>
+     <y>620</y>
      <width>261</width>
      <height>27</height>
     </rect>
@@ -40,7 +40,7 @@
    <property name="geometry">
     <rect>
      <x>440</x>
-     <y>460</y>
+     <y>620</y>
      <width>271</width>
      <height>27</height>
     </rect>
@@ -54,12 +54,12 @@
     <rect>
      <x>20</x>
      <y>0</y>
-     <width>681</width>
-     <height>31</height>
+     <width>701</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>Choose a folder that has a /garcon file to get the app info!</string>
+    <string>Select the folder that contains a .garconrc file! </string>
    </property>
   </widget>
  </widget>
