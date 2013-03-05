@@ -54,12 +54,12 @@
     <rect>
      <x>20</x>
      <y>0</y>
-     <width>701</width>
-     <height>61</height>
+     <width>501</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Select the .garcon file containing the app info!</string>
+    <string>Select the file containing the properly formatted application informartion.</string>
    </property>
   </widget>
  </widget>
