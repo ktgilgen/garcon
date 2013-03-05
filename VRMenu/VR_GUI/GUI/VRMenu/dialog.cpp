@@ -19,9 +19,9 @@ Dialog::Dialog(QWidget *parent) :
     QModelIndex index = model->index("/home");
     ui->treeView->setRootIndex(index);
     ui->treeView->resizeColumnToContents(0);
+    ui->treeView->hideColumn(1);
     ui->treeView->hideColumn(2);
     ui->treeView->hideColumn(3);
-    ui->treeView->hideColumn(1);
 
 
     //get instance of the app manager
@@ -49,8 +49,6 @@ void Dialog::on_pushButton_clicked()
     fin.clear();
     fin.open(fileString);
     fin >> buffer;
-
-    std::cout << "Buffer = " << buffer << std::endl;
 
     // Check if file exists
     if(fin.good() && buffer == 'N')
