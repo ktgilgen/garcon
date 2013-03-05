@@ -29,7 +29,7 @@ private slots:
 private:
     Ui::Dialog *ui;
     QDirModel *model;
-    QString selectedPath;
+    QString selectedFile;
     AppManager *manager;
 };
 

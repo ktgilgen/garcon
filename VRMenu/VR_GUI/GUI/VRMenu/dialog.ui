@@ -59,7 +59,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Select the folder that contains a .garconrc file! </string>
+    <string>Select the .garcon file containing the app info!</string>
    </property>
   </widget>
  </widget>

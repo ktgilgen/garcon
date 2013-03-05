@@ -35,13 +35,9 @@ void Dialog::on_pushButton_clicked()
 {
     //select directory
     QModelIndex index  = ui->treeView->currentIndex();
-    //get the name of the folder containing the file
-    Dialog::selectedPath = (model->filePath(index) );
-
-    //get file
-    QString fileName = selectedPath;
-    fileName += QLatin1String("/.garcon");
-    std::string fileString = fileName.toStdString().c_str();
+    //get the name of the file
+    Dialog::selectedFile = (model->filePath(index) );
+    std::string fileString = selectedFile.toStdString().c_str();
 
     // set up file reader
     std::ifstream fin;
