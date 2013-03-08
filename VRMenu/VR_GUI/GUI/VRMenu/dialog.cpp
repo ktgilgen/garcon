@@ -48,10 +48,10 @@ void Dialog::on_pushButton_clicked()
     std::ifstream fin;
     fin.clear();
     fin.open(fileString);
-    fin >> buffer;
+
 
     // Check if file exists
-    if(fin.good() && buffer == 'N')
+    if(fin.good())
     {
     // If yes, get the file from the selected folder
         AppInfo newApp; //create temp app
