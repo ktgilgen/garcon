@@ -1,7 +1,6 @@
 #include"AppInfo.h"
 
 AppInfo::AppInfo() {
-
 }
 
 AppInfo::~AppInfo() {
@@ -35,6 +34,9 @@ void AppInfo::setPathToImage(string path) {
 void AppInfo::setPathToBash(string path) {
     this->pathToBash = path;
 }
+void AppInfo::setPathToGarcon(string path){
+    this->pathToGarcon = path;
+}
 
 void AppInfo::setName(string Name) {
     this->name = Name;
@@ -54,6 +56,9 @@ void AppInfo::setAuthor(string Author) {
 
 string AppInfo::getPathToImage() {
     return pathToImage;
+}
+string AppInfo::getPathToGarcon() {
+    return pathToGarcon;
 }
 
 string AppInfo::getPathToBash() {

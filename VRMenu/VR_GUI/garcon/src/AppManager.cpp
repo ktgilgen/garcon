@@ -8,9 +8,13 @@ AppManager* AppManager::instance = 0;
 //constructor
 AppManager::AppManager() {
     string home = getenv("HOME") ; //get the home directory
+    string inputLine = "";
+
+    char buffer;
     GARCON_RC = home + "/.garconrc";
 
     ifstream fileIn;
+    ifstream fileLoc;
 
     fileIn.open(GARCON_RC.c_str());
     GARCON_RC_VERIFIED = true;
@@ -23,17 +27,38 @@ AppManager::AppManager() {
         outFile.close(); 
         return;
     } 
-  
-    AppInfo app;//temporary AppInfo object
-    bool moreAppsToRead = true;
-    fileIn >> noskipws;
 
-    while( moreAppsToRead ) { //get one app at a time from .garconrc
-        moreAppsToRead = getApp(fileIn, app);
-        if(!app.getName().empty())
-           apps[app.getName()] = app;
-        app.clear(); 
-    }
+    AppInfo app; //temporary AppInfo object
+    bool moreAppsToRead = true;
+    bool morePaths = true;
+    fileIn >> noskipws;
+    fileIn >> buffer;
+
+
+   while( morePaths ){
+       if( buffer != '='){
+           if(buffer == '&'){
+               cout <<"Path input from file: " << inputLine << endl;
+               fileLoc.clear();
+               fileLoc.open( inputLine);
+                getApp(fileLoc, app);
+               app.setPathToGarcon( string(inputLine) );
+               if(!app.getName().empty())
+                   apps[app.getName()] = app;
+               app.clear();
+               fileLoc.close();
+               inputLine.clear();
+                    fileIn >> buffer; //get endline char
+           }
+           else
+               inputLine += buffer;
+       }
+       else
+           morePaths = false;
+
+       fileIn >> buffer;
+   }
+   fileIn.close();
 }
 
 //destructor
@@ -151,13 +176,14 @@ void AppManager::saveApps() {
         outFile.open(GARCON_RC.c_str());
   
         for(auto key : apps) {
-            outFile << "NAME:" << key.second.getName() << "&" << endl;
+           /* outFile << "NAME:" << key.second.getName() << "&" << endl;
             outFile << "AUTHOR:" << key.second.getAuthor() << "&" << endl;
             outFile << "YEARBUILT:" << key.second.getYearBuilt() << "&" << endl;
             outFile << "DESCRIPTION:" << key.second.getDescription() << "&" << endl;
             outFile << "PATHTOIMAGE:" << key.second.getPathToImage() << "&" << endl;
             outFile << "PATHTOBASH:" <<key.second.getPathToBash() << "&" << endl;
-            outFile << ">" << endl;
+            outFile << ">" << endl;*/
+            outFile << key.second.getPathToGarcon() <<"&" << endl;
         }
       outFile << "=";
     }//end if

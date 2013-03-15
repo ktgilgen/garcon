@@ -16,18 +16,21 @@ class AppInfo {
 
       void setPathToImage(string);
       void setPathToBash(string);
+      void setPathToGarcon(string);
       void setName(string);
       void setYearBuilt(string);
       void setDescription(string);
       void setAuthor(string);
 
       string getPathToImage();
+      string getPathToGarcon();
       string getPathToBash();
       string getName();
       string getYearBuilt();
       string getDescription(); 
       string getAuthor();     
- 
+
+
    private:
      string name;
      string author; 
@@ -35,6 +38,8 @@ class AppInfo {
      string description;
      string pathToImage;
      string pathToBash; 
+     string pathToGarcon;
+
 };
 
 #endif
