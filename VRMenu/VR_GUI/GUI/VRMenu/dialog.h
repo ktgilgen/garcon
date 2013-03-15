@@ -29,7 +29,6 @@ private slots:
 private:
     Ui::Dialog *ui;
     QDirModel *model;
-    QString selectedFile;
     AppManager *manager;
 };
 

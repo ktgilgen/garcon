@@ -41,7 +41,7 @@ void Dialog::on_pushButton_clicked()
 
     //select file
     QModelIndex index  = ui->treeView->currentIndex();
-    Dialog::selectedFile = (model->filePath(index) );
+    QString selectedFile = (model->filePath(index) );
     std::string fileString = selectedFile.toStdString().c_str();
 
     // set up file reader
@@ -56,6 +56,7 @@ void Dialog::on_pushButton_clicked()
     // If yes, get the file from the selected folder
         AppInfo newApp; //create temp app
         manager->getApp(fin, newApp); // get the app from the file
+        newApp.setPathToGarcon(fileString);
         manager->addApp(newApp);  //put the app in the menu
     }
     // If no, don't do anything and print error message
