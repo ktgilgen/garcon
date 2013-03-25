@@ -38,10 +38,9 @@ AppManager::AppManager() {
    while( morePaths ){
        if( buffer != '='){
            if(buffer == '&'){
-               cout <<"Path input from file: " << inputLine << endl;
                fileLoc.clear();
-               fileLoc.open( inputLine);
-                getApp(fileLoc, app);
+               fileLoc.open(inputLine); //Open the file at file path
+                getApp(fileLoc, app);   //Get the app info from file
                app.setPathToGarcon( string(inputLine) );
                if(!app.getName().empty())
                    apps[app.getName()] = app;
