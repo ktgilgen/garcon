@@ -80,6 +80,8 @@ void MainWindow::on_QuitButton_clicked() { //Quit
 
 void MainWindow::on_edit_clicked() { //edit info
     //get the app that is selected
+
+    /*
     if(ui->list->currentRow() >= 0 && ui->list->currentRow() < appList.size()) {
         disableButtons();
         AppInfo changedApp = manager->getAppInfo(appList[ui->list->currentRow()]);
@@ -94,6 +96,8 @@ void MainWindow::on_edit_clicked() { //edit info
        //run it
          editInfo->show();
     }
+
+    */
 }
 
 void MainWindow::on_add_clicked() {

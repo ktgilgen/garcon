@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Fri Mar 1 12:24:38 2013
+** Created: Fri Mar 15 13:35:50 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -69,7 +69,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(837, 803);
+        MainWindow->resize(823, 994);
         QIcon icon;
         icon.addFile(QString::fromUtf8("../chameleon_logo.gif"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -103,7 +103,7 @@ public:
 
         verticalLayoutWidget_3 = new QWidget(centralWidget);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(30, 330, 781, 361));
+        verticalLayoutWidget_3->setGeometry(QRect(30, 330, 781, 561));
         mainMenu = new QVBoxLayout(verticalLayoutWidget_3);
         mainMenu->setSpacing(6);
         mainMenu->setContentsMargins(11, 11, 11, 11);
@@ -209,11 +209,11 @@ public:
 
         QuitButton = new QPushButton(centralWidget);
         QuitButton->setObjectName(QString::fromUtf8("QuitButton"));
-        QuitButton->setGeometry(QRect(640, 700, 171, 31));
+        QuitButton->setGeometry(QRect(560, 900, 251, 27));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 837, 25));
+        menuBar->setGeometry(QRect(0, 0, 823, 25));
         menuGARCON = new QMenu(menuBar);
         menuGARCON->setObjectName(QString::fromUtf8("menuGARCON"));
         MainWindow->setMenuBar(menuBar);
@@ -238,7 +238,7 @@ public:
         label->setText(QApplication::translate("MainWindow", "Gar\303\247on", 0, QApplication::UnicodeUTF8));
         tittle_2->setText(QApplication::translate("MainWindow", "Entr\303\251s", 0, QApplication::UnicodeUTF8));
         add->setText(QApplication::translate("MainWindow", "Add One", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("MainWindow", "=============================================================================================", 0, QApplication::UnicodeUTF8));
+        label_2->setText(QApplication::translate("MainWindow", "==============================================================================================", 0, QApplication::UnicodeUTF8));
         details->setText(QApplication::translate("MainWindow", "Details : ", 0, QApplication::UnicodeUTF8));
         year->setText(QApplication::translate("MainWindow", "Year : ", 0, QApplication::UnicodeUTF8));
         chef->setText(QApplication::translate("MainWindow", "Chef : ", 0, QApplication::UnicodeUTF8));

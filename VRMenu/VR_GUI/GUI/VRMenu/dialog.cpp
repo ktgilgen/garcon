@@ -12,7 +12,7 @@ Dialog::Dialog(QWidget *parent) :
     ui->setupUi(this);
 
     model = new QDirModel(this);
-    model->setReadOnly(true); //makes ths file system able to eb altered... make true for file select
+    model->setReadOnly(true);
 
     ui->treeView->setModel(model);
 
