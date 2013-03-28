@@ -14,7 +14,7 @@ AppManager::AppManager() {
     GARCON_RC = home + "/.garconrc";
 
     ifstream fileIn;
-    ifstream fileLoc;
+    ifstream fileLocation;
 
     fileIn.open(GARCON_RC.c_str());
     GARCON_RC_VERIFIED = true;
@@ -34,29 +34,29 @@ AppManager::AppManager() {
     fileIn >> noskipws;
     fileIn >> buffer;
 
-
-   while( morePaths ){
-       if( buffer != '='){
+// Get file path info from .garconrc file to apps
+   while( buffer != '=' ){
            if(buffer == '&'){
-               fileLoc.clear();
-               fileLoc.open(inputLine); //Open the file at file path
-                getApp(fileLoc, app);   //Get the app info from file
-               app.setPathToGarcon( string(inputLine) );
-               if(!app.getName().empty())
-                   apps[app.getName()] = app;
-               app.clear();
-               fileLoc.close();
+               fileLocation.clear();
+               fileLocation.open(inputLine); //Open the file at file path
+
+               if( fileLocation.good()){
+                    getApp(fileLocation, app);   //Get the app info from file
+                    app.setPathToGarcon( string(inputLine) );
+                    if(!app.getName().empty())
+                        apps[app.getName()] = app; // Add info to manager
+                    app.clear();
+               }
+
+
+               fileLocation.close();
                inputLine.clear();
-                    fileIn >> buffer; //get endline char
+               fileIn >> buffer; //get endline char
            }
            else
                inputLine += buffer;
-       }
-       else
-           morePaths = false;
-
        fileIn >> buffer;
-   }
+   } //end while loop
    fileIn.close();
 }
 
