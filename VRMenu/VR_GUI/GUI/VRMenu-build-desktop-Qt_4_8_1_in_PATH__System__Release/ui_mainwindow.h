@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Fri Mar 15 13:35:50 2013
+** Created: Thu Mar 28 12:03:58 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -56,9 +56,7 @@ public:
     QLabel *Bash;
     QTextEdit *BashLoc;
     QHBoxLayout *actions;
-    QPushButton *edit;
     QPushButton *run;
-    QPushButton *Remove;
     QPushButton *QuitButton;
     QMenuBar *menuBar;
     QMenu *menuGARCON;
@@ -189,20 +187,10 @@ public:
         actions = new QHBoxLayout();
         actions->setSpacing(6);
         actions->setObjectName(QString::fromUtf8("actions"));
-        edit = new QPushButton(verticalLayoutWidget_3);
-        edit->setObjectName(QString::fromUtf8("edit"));
-
-        actions->addWidget(edit);
-
         run = new QPushButton(verticalLayoutWidget_3);
         run->setObjectName(QString::fromUtf8("run"));
 
         actions->addWidget(run);
-
-        Remove = new QPushButton(verticalLayoutWidget_3);
-        Remove->setObjectName(QString::fromUtf8("Remove"));
-
-        actions->addWidget(Remove);
 
 
         mainMenu->addLayout(actions);
@@ -243,9 +231,7 @@ public:
         year->setText(QApplication::translate("MainWindow", "Year : ", 0, QApplication::UnicodeUTF8));
         chef->setText(QApplication::translate("MainWindow", "Chef : ", 0, QApplication::UnicodeUTF8));
         Bash->setText(QApplication::translate("MainWindow", "Recipe : ", 0, QApplication::UnicodeUTF8));
-        edit->setText(QApplication::translate("MainWindow", "Edit Info", 0, QApplication::UnicodeUTF8));
         run->setText(QApplication::translate("MainWindow", "Run", 0, QApplication::UnicodeUTF8));
-        Remove->setText(QApplication::translate("MainWindow", "Remove", 0, QApplication::UnicodeUTF8));
         QuitButton->setText(QApplication::translate("MainWindow", "Quit", 0, QApplication::UnicodeUTF8));
         menuGARCON->setTitle(QApplication::translate("MainWindow", "GARCON", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

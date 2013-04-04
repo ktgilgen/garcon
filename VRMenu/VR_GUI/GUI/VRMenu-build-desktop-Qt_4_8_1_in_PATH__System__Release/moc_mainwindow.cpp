@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Thu Mar 14 14:15:07 2013
+** Created: Thu Apr 4 11:33:54 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -57,9 +57,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_list_clicked(); break;
         case 1: _t->on_run_clicked(); break;
-        case 2: _t->on_Remove_clicked(); break;
+        //case 2: _t->on_Remove_clicked(); break;
         case 3: _t->on_QuitButton_clicked(); break;
-        case 4: _t->on_edit_clicked(); break;
+        //case 4: _t->on_edit_clicked(); break;
         case 5: _t->update(); break;
         case 6: _t->on_add_clicked(); break;
         default: ;

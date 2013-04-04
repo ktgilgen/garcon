@@ -148,23 +148,9 @@
      <item>
       <layout class="QHBoxLayout" name="actions">
        <item>
-        <widget class="QPushButton" name="edit">
-         <property name="text">
-          <string>Edit Info</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QPushButton" name="run">
          <property name="text">
           <string>Run</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="Remove">
-         <property name="text">
-          <string>Remove</string>
          </property>
         </widget>
        </item>

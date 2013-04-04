@@ -8,13 +8,9 @@ AppManager* AppManager::instance = 0;
 //constructor
 AppManager::AppManager() {
     string home = getenv("HOME") ; //get the home directory
-    string inputLine = "";
-
-    char buffer;
     GARCON_RC = home + "/.garconrc";
 
     ifstream fileIn;
-    ifstream fileLocation;
 
     fileIn.open(GARCON_RC.c_str());
     GARCON_RC_VERIFIED = true;
@@ -28,36 +24,10 @@ AppManager::AppManager() {
         return;
     } 
 
-    AppInfo app; //temporary AppInfo object
-    bool moreAppsToRead = true;
-    bool morePaths = true;
-    fileIn >> noskipws;
-    fileIn >> buffer;
+    //initializes app list with files stored in .garconrc
+    initAppList(fileIn);
+    fileIn.close();
 
-// Get file path info from .garconrc file to apps
-   while( buffer != '=' ){
-           if(buffer == '&'){
-               fileLocation.clear();
-               fileLocation.open(inputLine); //Open the file at file path
-
-               if( fileLocation.good()){
-                    getApp(fileLocation, app);   //Get the app info from file
-                    app.setPathToGarcon( string(inputLine) );
-                    if(!app.getName().empty())
-                        apps[app.getName()] = app; // Add info to manager
-                    app.clear();
-               }
-
-
-               fileLocation.close();
-               inputLine.clear();
-               fileIn >> buffer; //get endline char
-           }
-           else
-               inputLine += buffer;
-       fileIn >> buffer;
-   } //end while loop
-   fileIn.close();
 }
 
 //destructor
@@ -130,6 +100,41 @@ bool AppManager::good() {
    if(GARCON_RC_VERIFIED)
      return true;
    return false;
+}
+
+//Opens .garconrc and uploads the current apps stored
+void AppManager::initAppList(ifstream& fileIn){
+    ifstream fileLocation;
+    char buffer;
+    string inputLine = "";
+    AppInfo app;
+
+    fileIn >> noskipws;
+    fileIn >> buffer;
+
+// Get file path info from .garconrc file to apps
+   while( buffer != '=' ){
+           if(buffer == '&'){
+               fileLocation.clear();
+               fileLocation.open(inputLine); //Open the file at file stored path
+
+               if( fileLocation.good()){
+                    getApp(fileLocation, app);   //Get the app info from file
+                    app.setPathToGarcon( string(inputLine) );
+                    if(!app.getName().empty())
+                        apps[app.getName()] = app; // Add info to manager
+                    app.clear();
+               }
+
+
+               fileLocation.close();
+               inputLine.clear();
+               fileIn >> buffer; //get endline char
+           }
+           else
+               inputLine += buffer;
+       fileIn >> buffer;
+   } //end while loop
 }
 
 //gets the list of app names
