@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Thu Apr 4 11:33:54 2013
+** Created: Fri Apr 5 12:21:21 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -34,19 +34,18 @@ static const uint qt_meta_data_MainWindow[] = {
       12,   11,   11,   11, 0x08,
       30,   11,   11,   11, 0x08,
       47,   11,   11,   11, 0x08,
-      67,   11,   11,   11, 0x08,
-      91,   11,   11,   11, 0x08,
-     109,   11,   11,   11, 0x08,
-     118,   11,   11,   11, 0x08,
+      71,   11,   11,   11, 0x08,
+      80,   11,   11,   11, 0x08,
+      97,   11,   11,   11, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_MainWindow[] = {
     "MainWindow\0\0on_list_clicked()\0"
-    "on_run_clicked()\0on_Remove_clicked()\0"
-    "on_QuitButton_clicked()\0on_edit_clicked()\0"
+    "on_run_clicked()\0on_QuitButton_clicked()\0"
     "update()\0on_add_clicked()\0"
+    "on_pushButton_clicked()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -57,11 +56,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_list_clicked(); break;
         case 1: _t->on_run_clicked(); break;
-        //case 2: _t->on_Remove_clicked(); break;
-        case 3: _t->on_QuitButton_clicked(); break;
-        //case 4: _t->on_edit_clicked(); break;
-        case 5: _t->update(); break;
-        case 6: _t->on_add_clicked(); break;
+        case 2: _t->on_QuitButton_clicked(); break;
+        case 3: _t->update(); break;
+        case 4: _t->on_add_clicked(); break;
+        case 5: _t->on_pushButton_clicked(); break;
         default: ;
         }
     }
@@ -100,9 +98,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 6;
     }
     return _id;
 }

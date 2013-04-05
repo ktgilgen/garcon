@@ -26,6 +26,10 @@ class AppManager { /*IMPLEMENTED AS SINGLETON*/
      void setString ( QString name);
      void quit(); 
 
+     bool checkVRPN(); //true if on, false if off
+     bool restartVRPN();
+     bool startVRPN();
+
 
    private:
       AppManager();//constructor

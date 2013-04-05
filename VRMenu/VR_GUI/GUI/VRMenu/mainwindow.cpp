@@ -41,7 +41,7 @@ void MainWindow::on_list_clicked() { //when an app is selected
     int selectedApp = ui->list->currentRow(); //determine which app is selected from the list
     AppInfo app_temp = manager->getAppInfo(appList[selectedApp]); //get the app info from manager
 
-    //set the details based on the selected app
+    //set the details based on the selected app//if not, start it
     ui->Author_name->setText( QString(app_temp.getAuthor().c_str()) );
     ui->Year_Made->setText(QString(app_temp.getYearBuilt().c_str()));
     ui->Descriptions->setText(QString(app_temp.getDescription().c_str()));
@@ -86,7 +86,7 @@ void MainWindow::on_edit_clicked() { //edit info
         disableButtons();
         AppInfo changedApp = manager->getAppInfo(appList[ui->list->currentRow()]);
 
-       //create editWindow and set the app
+       //create editWindow and set the app//if not, start it
         EditApp *editInfo = new EditApp();
         editInfo->setApp(changedApp);
 
@@ -105,7 +105,7 @@ void MainWindow::on_add_clicked() {
     //get the app that is selected
     AppInfo changedApp;
 
-    //testing the directory explore
+    //testing the directory explore//if not, start it
     Dialog *dirBox = new Dialog();
     //dirBox->setApp(changedApp);
 
@@ -130,4 +130,9 @@ void MainWindow::disableButtons() {
     ui->QuitButton->setDisabled(true);
     //ui->Remove->setDisabled(true);
     ui->add->setDisabled(true);
+}
+
+void MainWindow::on_pushButton_clicked() //the retsart vrpn button
+{
+    manager->restartVRPN();
 }

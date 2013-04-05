@@ -9,7 +9,7 @@ AppManager* AppManager::instance = 0;
 AppManager::AppManager() {
     string home = getenv("HOME") ; //get the home directory
     GARCON_RC = home + "/.garconrc";
-
+    bool isOn = false;
     ifstream fileIn;
 
     fileIn.open(GARCON_RC.c_str());
@@ -28,10 +28,17 @@ AppManager::AppManager() {
     initAppList(fileIn);
     fileIn.close();
 
+    //check if VRPN is on
+    isOn = checkVRPN();
+    if(!isOn)
+    {
+        startVRPN(); //if not, start it
+    }
+
 }
 
 //destructor
-AppManager::~AppManager() {
+AppManager::~AppManager() {bool
     saveApps();
 }
 
@@ -192,6 +199,44 @@ void AppManager::saveApps() {
       outFile << "=";
     }//end if
 }
+
+bool AppManager::checkVRPN(){
+
+    //Check to see if file exists
+    ifstream test;
+    test.clear();
+    test.open("/var/lock/wiimote");
+
+    //true if on, false if off
+    if( test.good()){
+        test.close();
+        return true;
+    }
+    else{
+        test.close();
+        return false;
+    }
+}
+bool AppManager::restartVRPN(){
+    //Navigate to VRPN location
+    std::string gnome = "gnome-terminal -x sh -c ";
+    std::string executable = "/home/local/share/wiimote/wiimote";
+    std::string quote = "\"";
+    std::string arg = "restart";
+    std::string command = gnome + quote + executable + " " + arg + quote;
+    system(command.c_str());
+}
+
+bool AppManager::startVRPN(){
+    //Navigate to VRPN location
+    std::string gnome = "gnome-terminal -x sh -c ";
+    std::string executable = "/home/local/share/wiimote/wiimote";
+    std::string quote = "\"";
+    std::string arg = "start";
+    std::string command = gnome + quote + executable + " " + arg + quote;
+    system(command.c_str());
+}
+
 
 
 

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Thu Mar 28 12:03:58 2013
+** Created: Fri Apr 5 12:19:37 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -58,6 +58,7 @@ public:
     QHBoxLayout *actions;
     QPushButton *run;
     QPushButton *QuitButton;
+    QPushButton *pushButton;
     QMenuBar *menuBar;
     QMenu *menuGARCON;
     QToolBar *mainToolBar;
@@ -197,7 +198,10 @@ public:
 
         QuitButton = new QPushButton(centralWidget);
         QuitButton->setObjectName(QString::fromUtf8("QuitButton"));
-        QuitButton->setGeometry(QRect(560, 900, 251, 27));
+        QuitButton->setGeometry(QRect(139, 900, 85, 27));
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(30, 900, 109, 27));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -233,6 +237,7 @@ public:
         Bash->setText(QApplication::translate("MainWindow", "Recipe : ", 0, QApplication::UnicodeUTF8));
         run->setText(QApplication::translate("MainWindow", "Run", 0, QApplication::UnicodeUTF8));
         QuitButton->setText(QApplication::translate("MainWindow", "Quit", 0, QApplication::UnicodeUTF8));
+        pushButton->setText(QApplication::translate("MainWindow", "Restart VRPN", 0, QApplication::UnicodeUTF8));
         menuGARCON->setTitle(QApplication::translate("MainWindow", "GARCON", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 

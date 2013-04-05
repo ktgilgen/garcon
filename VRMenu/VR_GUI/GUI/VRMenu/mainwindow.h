@@ -21,13 +21,15 @@ class MainWindow : public QMainWindow {
   private slots:
      void on_list_clicked();
      void on_run_clicked();
-     void on_Remove_clicked();
+     //void on_Remove_clicked();
      void on_QuitButton_clicked();
-     void on_edit_clicked();
+     //void on_edit_clicked();
      void update();
 
 
      void on_add_clicked();
+
+     void on_pushButton_clicked();
 
 private:
     void updateAppList(); //update the app list

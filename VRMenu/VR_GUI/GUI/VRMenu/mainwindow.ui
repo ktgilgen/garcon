@@ -161,14 +161,27 @@
    <widget class="QPushButton" name="QuitButton">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>139</x>
       <y>900</y>
-      <width>251</width>
+      <width>85</width>
       <height>27</height>
      </rect>
     </property>
     <property name="text">
      <string>Quit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>900</y>
+      <width>109</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Restart VRPN</string>
     </property>
    </widget>
   </widget>
