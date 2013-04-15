@@ -15,7 +15,7 @@ class AppInfo {
       void clear();
 
       void setPathToImage(string);
-      void setPathToBash(string);
+      void setPathToWorkingDirectory(string);
       void setPathToGarcon(string);
       void setName(string);
       void setYearBuilt(string);
@@ -24,7 +24,7 @@ class AppInfo {
 
       string getPathToImage();
       string getPathToGarcon();
-      string getPathToBash();
+      string getPathToWorkingDirectory();
       string getName();
       string getYearBuilt();
       string getDescription(); 
@@ -37,7 +37,7 @@ class AppInfo {
      string yearBuilt;
      string description;
      string pathToImage;
-     string pathToBash; 
+     string workingDirectory;
      string pathToGarcon;
 
 };

@@ -1,4 +1,5 @@
 #include"AppManager.h"
+//#include "controls.h"
 #include<fstream>
 #include<utility>
 
@@ -97,8 +98,8 @@ void AppManager::setAttribute(pair<string, string> &attribute, AppInfo &app) {
             app.setDescription(attribute.second);
         else if( attribute.first == "PATHTOIMAGE")
             app.setPathToImage(attribute.second);
-        else if( attribute.first ==  "PATHTOBASH") 
-            app.setPathToBash(attribute.second);
+        else if( attribute.first ==  "workingDirectory")
+            app.setPathToWorkingDirectory(attribute.second);
 }
 
 
@@ -153,14 +154,24 @@ void AppManager::getAppList(vector<string> &appList) {
 
 //assuming that the app exists in the system TODO: get rid of this assumption
 bool AppManager::runApp(string appName) {
-    //start new stuff
-        std::string gnome = "gnome-terminal -x sh -c ";
-        std::string programPath = apps[appName].getPathToBash();
-        std::string quote = "\"";
-        std::string runCmd = gnome + quote + programPath + quote;
-       if( system( runCmd.c_str()) ) //if app could not run
-          return false;
-       return true;
+
+
+    /*
+        std::string programPath = "cd " + apps[appName].getPathToWorkingDirectory() + "; bash run.sh" ;
+        //diplay controls image
+        Controls *image = new Controls();
+        connect( image, SIGNAL(destroyed()), this, SLOT(   update()    ) );
+        image->show();
+        image->display(apps[appName].getPathToImage());
+
+        system( programPath.c_str() );
+
+        //close the image window
+        image->close();
+        return true;
+
+        */
+    return false;
 }
 
 //assuming that the app exists in the system TODO: get rid of this assumption

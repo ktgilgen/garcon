@@ -17,7 +17,7 @@ void EditApp::setApp(AppInfo selectedApp) {
   //set current values
   ui->author->setText( QString(app.getAuthor().c_str()) );
   ui->newName->setText( QString(app.getName().c_str()) );
-  ui->bashPath->setText( QString(app.getPathToBash().c_str()) );
+  ui->bashPath->setText( QString(app.getPathToWorkingDirectory().c_str()) );
   ui->newDescription->setText( QString(app.getDescription().c_str()) );
   ui->newYear->setText( QString(app.getYearBuilt().c_str()) );
 
@@ -33,7 +33,7 @@ void EditApp::on_Done_clicked() {
     app.setAuthor((ui->author->toPlainText()).toStdString());
     app.setName(ui->newName->toPlainText().toStdString());
     app.setDescription(ui->newDescription->toPlainText().toStdString());
-    app.setPathToBash(ui->bashPath->toPlainText().toStdString());
+    app.setPathToWorkingDirectory(ui->bashPath->toPlainText().toStdString());
     app.setYearBuilt(ui->newYear->toPlainText().toStdString());
 
     manager->addApp(app);

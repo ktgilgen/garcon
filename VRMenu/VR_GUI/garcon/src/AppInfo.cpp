@@ -11,7 +11,7 @@ void AppInfo::clear() {
    pathToImage.clear();
    name.clear();
    author.clear();
-   pathToBash.clear();
+   workingDirectory.clear();
    pathToImage.clear();
    description.clear();
 }
@@ -20,7 +20,7 @@ AppInfo::AppInfo(string imagePath, string bashPath, string name, string YearBuil
                                                  string shortDescription, string author) {
   
      setPathToImage(imagePath);
-     setPathToBash(bashPath);
+     setPathToWorkingDirectory(bashPath);
      setName(name);
      setYearBuilt(YearBuilt);
      setDescription(shortDescription);
@@ -31,8 +31,8 @@ void AppInfo::setPathToImage(string path) {
     this->pathToImage = path;   
 }
 
-void AppInfo::setPathToBash(string path) {
-    this->pathToBash = path;
+void AppInfo::setPathToWorkingDirectory(string path) {
+    this->workingDirectory = path;
 }
 void AppInfo::setPathToGarcon(string path){
     this->pathToGarcon = path;
@@ -61,8 +61,8 @@ string AppInfo::getPathToGarcon() {
     return pathToGarcon;
 }
 
-string AppInfo::getPathToBash() {
-    return pathToBash;
+string AppInfo::getPathToWorkingDirectory() {
+    return workingDirectory;
 }
 
 string AppInfo::getName() {
