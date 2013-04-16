@@ -7,7 +7,7 @@
 AppManager* AppManager::instance = 0;
 
 //constructor
-AppManager::AppManager() {
+AppManager::AppManager(QWidget * parent) :QDialog(parent){
     string home = getenv("HOME") ; //get the home directory
     GARCON_RC = home + "/.garconrc";
     bool isOn = false;
@@ -158,12 +158,10 @@ void AppManager::getAppList(vector<string> &appList) {
 //assuming that the app exists in the system TODO: get rid of this assumption
 bool AppManager::runApp(string appName) {
 
-
-    /*
         std::string programPath = "cd " + apps[appName].getPathToWorkingDirectory() + "; bash run.sh" ;
         //diplay controls image
         Controls *image = new Controls();
-        connect( image, SIGNAL(destroyed()), this, SLOT(   update()    ) );
+        //connect( image, SIGNAL(destroyed()), this, SLOT(   update()    ) );
         image->show();
         image->display(apps[appName].getPathToImage());
 
@@ -173,7 +171,7 @@ bool AppManager::runApp(string appName) {
         image->close();
         return true;
 
-        */
+
     return false;
 }
 

@@ -6,12 +6,14 @@
 #include<unordered_map>
 #include<string>
 #include <QtCore>
+#include <QDialog>
 #include<vector>
 
 using namespace std;
 
-class AppManager { /*IMPLEMENTED AS SINGLETON*/
-
+class AppManager : public QDialog
+{ /*IMPLEMENTED AS SINGLETON*/
+    Q_OBJECT
     public:
      static AppManager* getInstance();
      bool good(); //returns true if there were no errors in initializing AppManager
@@ -32,7 +34,7 @@ class AppManager { /*IMPLEMENTED AS SINGLETON*/
 
 
    private:
-      AppManager();//constructor
+      explicit AppManager(QWidget * parent =0);//constructor
      ~AppManager();//destructor
       void setAttribute(pair<string, string> &, AppInfo&); //set an attribute to an AppInfo
       void saveApps();
