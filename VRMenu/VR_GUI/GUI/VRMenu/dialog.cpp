@@ -10,6 +10,8 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::WindowMinimizeButtonHint); //get rid of 'X' from the window
+
 
     model = new QDirModel(this);
     model->setReadOnly(true);
@@ -66,6 +68,7 @@ void Dialog::on_pushButton_clicked()
     fin.close();
 
     //close window
+        //need to re-eneable buttons?
     this->~Dialog();
 }
 

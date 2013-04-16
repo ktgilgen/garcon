@@ -59,48 +59,12 @@ void MainWindow::on_run_clicked() { //run an app
         this->update();
     }
 }
-/*
-void MainWindow::on_Remove_clicked() { //remove an app
-    int selectedApp = ui->list->currentRow();
-
-    if(selectedApp >= 0 && selectedApp < appList.size()) {
-        manager->removeApp(appList[selectedApp]);
-    }
-
-    //update list
-      this->updateAppList();
-}
-*/
-
 
 void MainWindow::on_QuitButton_clicked() { //Quit
     manager->quit();
     QCoreApplication::quit();
 }
-/*
-void MainWindow::on_edit_clicked() { //edit info
-    //get the app that is selected
 
-
-    if(ui->list->currentRow() >= 0 && ui->list->currentRow() < appList.size()) {
-        disableButtons(    cout << "button to restart vrpn was pushed!" << endl;
-);
-        AppInfo changedApp = manager->getAppInfo(appList[ui->list->currentRow()]);
-
-       //create editWindow and set the app//if not, start it
-        EditApp *editInfo = new EditApp();
-        editInfo->setApp(changedApp);
-
-       //connect
-        connect(editInfo, SIGNAL(destroyed()), this, SLOT(update()) );
-
-       //run it
-         editInfo->show();
-    }
-
-
-}
-*/
 void MainWindow::on_add_clicked() {
      disableButtons();
     //get the app that is selected
@@ -108,7 +72,6 @@ void MainWindow::on_add_clicked() {
 
     //testing the directory explore//if not, start it
     Dialog *dirBox = new Dialog();
-    //dirBox->setApp(changedApp);
 
     connect( dirBox, SIGNAL(destroyed()), this, SLOT(update()) );
     dirBox->show();
@@ -117,9 +80,7 @@ void MainWindow::on_add_clicked() {
 
 void MainWindow::update() {
     ui->run->setEnabled(true); //disable run
-    //ui->edit->setEnabled(true); //disable edit info
     ui->QuitButton->setEnabled(true);
-    //ui->Remove->setEnabled(true);
     ui->add->setEnabled(true);
 
     this->updateAppList();
@@ -127,9 +88,7 @@ void MainWindow::update() {
 
 void MainWindow::disableButtons() {
     ui->run->setDisabled(true); //disable run
-    //ui->edit->setDisabled(true); //disable edit info
     ui->QuitButton->setDisabled(true);
-    //ui->Remove->setDisabled(true);
     ui->add->setDisabled(true);
 }
 
