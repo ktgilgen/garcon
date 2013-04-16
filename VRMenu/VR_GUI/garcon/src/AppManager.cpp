@@ -1,5 +1,5 @@
 #include"AppManager.h"
-//#include "controls.h"
+#include "controls.h"
 #include<fstream>
 #include<utility>
 
@@ -25,9 +25,12 @@ AppManager::AppManager() {
         return;
     } 
 
-    //initializes app list with files stored in .garconrc
-    initAppList(fileIn);
-    fileIn.close();
+    else //(fileIn.good()) //file is there
+	{
+    	//initializes app list with files stored in .garconrc
+    	initAppList(fileIn);
+    	fileIn.close();
+	}
 
     //check if VRPN is on
     isOn = checkVRPN();
@@ -39,7 +42,7 @@ AppManager::AppManager() {
 }
 
 //destructor
-AppManager::~AppManager() {bool
+AppManager::~AppManager() {
     saveApps();
 }
 
