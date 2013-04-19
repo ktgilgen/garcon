@@ -158,7 +158,10 @@ void AppManager::getAppList(vector<string> &appList) {
 //assuming that the app exists in the system TODO: get rid of this assumption
 bool AppManager::runApp(string appName) {
 
-        std::string programPath = "cd " + apps[appName].getPathToWorkingDirectory() + "; bash run.sh" ;
+        //Disable the other main window buttons while program is running
+
+
+        std::string programPath = "cd " + apps[appName].getPathToWorkingDirectory() + "; bash Matrix.sh" ;
         //diplay controls image
         Controls *image = new Controls();
         //connect( image, SIGNAL(destroyed()), this, SLOT(   update()    ) );
@@ -169,6 +172,8 @@ bool AppManager::runApp(string appName) {
 
         //close the image window
         image->close();
+
+        //Turn buttons back on here?
         return true;
 
 

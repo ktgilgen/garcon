@@ -58,7 +58,7 @@ void MainWindow::on_run_clicked() { //run an app
         }
         this->update();
     }
-}
+ }
 
 void MainWindow::on_QuitButton_clicked() { //Quit
     manager->quit();
@@ -79,6 +79,8 @@ void MainWindow::on_add_clicked() {
 
 
 void MainWindow::update() {
+    ui->centralWidget->setEnabled(true);
+
     ui->run->setEnabled(true); //disable run
     ui->QuitButton->setEnabled(true);
     ui->add->setEnabled(true);
@@ -87,6 +89,7 @@ void MainWindow::update() {
 }
 
 void MainWindow::disableButtons() {
+    ui->centralWidget->setEnabled(false);
     ui->run->setDisabled(true); //disable run
     ui->QuitButton->setDisabled(true);
     ui->add->setDisabled(true);
