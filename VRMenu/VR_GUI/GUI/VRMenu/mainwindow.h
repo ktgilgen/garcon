@@ -29,7 +29,9 @@ class MainWindow : public QMainWindow {
 
      void on_add_clicked();
 
-     void on_pushButton_clicked();
+     void on_restartVRPN_clicked();
+
+     void on_showControls_clicked();
 
 private:
     void updateAppList(); //update the app list

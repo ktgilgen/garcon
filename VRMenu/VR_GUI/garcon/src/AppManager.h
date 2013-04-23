@@ -31,6 +31,7 @@ class AppManager : public QDialog
      bool checkVRPN(); //true if on, false if off
      bool restartVRPN();
      bool startVRPN();
+     bool showImage(string appName);
 
 
    private:

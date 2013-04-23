@@ -95,7 +95,21 @@ void MainWindow::disableButtons() {
     ui->add->setDisabled(true);
 }
 
-void MainWindow::on_pushButton_clicked() //the retsart vrpn button
+void MainWindow::on_restartVRPN_clicked() //the retsart vrpn button
 {
     manager->restartVRPN();
+}
+
+void MainWindow::on_showControls_clicked()
+{
+    //Get the app that it has selected
+    int selectedApp = ui->list->currentRow();
+
+    if(selectedApp >= 0 && selectedApp < appList.size()) {
+         disableButtons();
+        if(!manager->showImage(appList[selectedApp])) {
+            QMessageBox::information(this, "ERROR", "NO IMAGE");
+        }
+        this->update();
+    }
 }

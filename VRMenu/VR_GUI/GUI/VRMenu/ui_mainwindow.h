@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Mon Apr 15 13:16:55 2013
+** Created: Tue Apr 23 11:54:54 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -23,6 +23,7 @@
 #include <QtGui/QMenu>
 #include <QtGui/QMenuBar>
 #include <QtGui/QPushButton>
+#include <QtGui/QSplitter>
 #include <QtGui/QStatusBar>
 #include <QtGui/QTextEdit>
 #include <QtGui/QToolBar>
@@ -57,8 +58,10 @@ public:
     QTextEdit *BashLoc;
     QHBoxLayout *actions;
     QPushButton *run;
+    QSplitter *splitter;
+    QPushButton *restartVRPN;
+    QPushButton *showControls;
     QPushButton *QuitButton;
-    QPushButton *pushButton;
     QMenuBar *menuBar;
     QMenu *menuGARCON;
     QToolBar *mainToolBar;
@@ -196,12 +199,19 @@ public:
 
         mainMenu->addLayout(actions);
 
-        QuitButton = new QPushButton(centralWidget);
+        splitter = new QSplitter(centralWidget);
+        splitter->setObjectName(QString::fromUtf8("splitter"));
+        splitter->setGeometry(QRect(30, 900, 309, 27));
+        splitter->setOrientation(Qt::Horizontal);
+        restartVRPN = new QPushButton(splitter);
+        restartVRPN->setObjectName(QString::fromUtf8("restartVRPN"));
+        splitter->addWidget(restartVRPN);
+        showControls = new QPushButton(splitter);
+        showControls->setObjectName(QString::fromUtf8("showControls"));
+        splitter->addWidget(showControls);
+        QuitButton = new QPushButton(splitter);
         QuitButton->setObjectName(QString::fromUtf8("QuitButton"));
-        QuitButton->setGeometry(QRect(139, 900, 85, 27));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(30, 900, 109, 27));
+        splitter->addWidget(QuitButton);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -236,8 +246,9 @@ public:
         chef->setText(QApplication::translate("MainWindow", "Chef : ", 0, QApplication::UnicodeUTF8));
         Bash->setText(QApplication::translate("MainWindow", "Recipe : ", 0, QApplication::UnicodeUTF8));
         run->setText(QApplication::translate("MainWindow", "Run", 0, QApplication::UnicodeUTF8));
+        restartVRPN->setText(QApplication::translate("MainWindow", "Restart VRPN", 0, QApplication::UnicodeUTF8));
+        showControls->setText(QApplication::translate("MainWindow", "Show Controls", 0, QApplication::UnicodeUTF8));
         QuitButton->setText(QApplication::translate("MainWindow", "Quit", 0, QApplication::UnicodeUTF8));
-        pushButton->setText(QApplication::translate("MainWindow", "Restart VRPN", 0, QApplication::UnicodeUTF8));
         menuGARCON->setTitle(QApplication::translate("MainWindow", "GARCON", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 

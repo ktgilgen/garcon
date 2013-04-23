@@ -161,7 +161,7 @@ bool AppManager::runApp(string appName) {
         //Disable the other main window buttons while program is running
 
 
-        std::string programPath = "cd " + apps[appName].getPathToWorkingDirectory() + "; bash Matrix.sh" ;
+        std::string programPath = "cd " + apps[appName].getPathToWorkingDirectory() + "; bash run.sh" ;
         //diplay controls image
         Controls *image = new Controls();
         //connect( image, SIGNAL(destroyed()), this, SLOT(   update()    ) );
@@ -252,6 +252,21 @@ bool AppManager::startVRPN(){
     std::string arg = "start";
     std::string command = gnome + quote + executable + " " + arg + quote;
     system(command.c_str());
+}
+
+bool AppManager::showImage(string appName){
+    //diplay controls image
+            Controls *image = new Controls();
+
+            if( apps[appName].getPathToImage() != "NO_IMAGE" ){
+                connect( image, SIGNAL(destroyed()), this, SLOT(update()) );
+                image->show();
+                image->display(apps[appName].getPathToImage());
+                return true;
+            }
+            else
+                return false;
+
 }
 
 

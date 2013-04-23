@@ -158,31 +158,33 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="QuitButton">
-    <property name="geometry">
-     <rect>
-      <x>139</x>
-      <y>900</y>
-      <width>85</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Quit</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QSplitter" name="splitter">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>900</y>
-      <width>109</width>
+      <width>309</width>
       <height>27</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Restart VRPN</string>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
+    <widget class="QPushButton" name="restartVRPN">
+     <property name="text">
+      <string>Restart VRPN</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="showControls">
+     <property name="text">
+      <string>Show Controls</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="QuitButton">
+     <property name="text">
+      <string>Quit</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
