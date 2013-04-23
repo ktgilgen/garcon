@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'dialog.ui'
 **
-** Created: Fri Mar 8 13:25:35 2013
-**      by: Qt User Interface Compiler version 4.8.1
+** Created: Tue Apr 23 16:52:11 2013
+**      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -37,7 +37,7 @@ public:
         Dialog->resize(864, 687);
         treeView = new QTreeView(Dialog);
         treeView->setObjectName(QString::fromUtf8("treeView"));
-        treeView->setGeometry(QRect(10, 190, 831, 421));
+        treeView->setGeometry(QRect(10, 40, 831, 571));
         pushButton = new QPushButton(Dialog);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(20, 620, 261, 27));
