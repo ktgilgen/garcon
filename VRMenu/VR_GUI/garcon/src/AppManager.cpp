@@ -25,7 +25,7 @@ AppManager::AppManager(QWidget * parent) :QDialog(parent){
         return;
     } 
 
-    else //(fileIn.good()) //file is there
+    else //file is there
 	{
     	//initializes app list with files stored in .garconrc
     	initAppList(fileIn);
@@ -163,7 +163,7 @@ bool AppManager::runApp(string appName) {
         //button disable and enable handled by mainwindow on_run_clicked() - henry
     //check to make sure working directory is not an empty string
     if(apps[appName].getPathToWorkingDirectory().empty()){
-        //wont be able to run app without wokring directory
+        //wont be able to run app without working directory
         return false;
     }
     std::string programPath = "cd " + apps[appName].getPathToWorkingDirectory() + "; bash run.sh" ;
@@ -200,13 +200,6 @@ void AppManager::saveApps() {
         outFile.open(GARCON_RC.c_str());
   
         for(auto key : apps) {
-           /* outFile << "NAME:" << key.second.getName() << "&" << endl;
-            outFile << "AUTHOR:" << key.second.getAuthor() << "&" << endl;
-            outFile << "YEARBUILT:" << key.second.getYearBuilt() << "&" << endl;
-            outFile << "DESCRIPTION:" << key.second.getDescription() << "&" << endl;
-            outFile << "PATHTOIMAGE:" << key.second.getPathToImage() << "&" << endl;
-            outFile << "PATHTOBASH:" <<key.second.getPathToBash() << "&" << endl;
-            outFile << ">" << endl;*/
             outFile << key.second.getPathToGarcon() <<"&" << endl;
         }
       outFile << "=";
@@ -252,13 +245,29 @@ bool AppManager::startVRPN(){
 }
 
 bool AppManager::showImage(string appName){
+    ifstream testInput;
+    testInput.clear();
+
     //make sure image path is not empty
     if( !(apps[appName].getPathToImage().empty()) ){
-        Controls *image = new Controls();
-        connect( image, SIGNAL(destroyed()), this, SLOT(update()) );
-        image->show();
-        image->display(apps[appName].getPathToImage());
-        return true;
+
+        //Check if the path is good
+        testInput.open( apps[appName].getPathToImage() );
+        if(testInput.good())
+        {
+            Controls *image = new Controls();
+            connect( image, SIGNAL(destroyed()), this, SLOT(update()) );
+            image->show();
+            image->display(apps[appName].getPathToImage());
+            testInput.close();
+            return true;
+        }
+        else
+        {
+                testInput.close();
+                return false;
+        }
+
     }
     //image path empty
     else
