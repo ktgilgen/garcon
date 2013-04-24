@@ -156,7 +156,7 @@ void AppManager::getAppList(vector<string> &appList) {
 }
 
 //assuming that the app exists in the system TODO: get rid of this assumption
-//may want to make sure sh file exists and working directory is not null
+//may want to make sure sh file exists
 bool AppManager::runApp(string appName) {
 
         //Disable the other main window buttons while program is running

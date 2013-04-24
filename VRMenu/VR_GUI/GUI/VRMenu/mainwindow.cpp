@@ -52,10 +52,12 @@ void MainWindow::on_run_clicked() { //run an app
     int selectedApp = ui->list->currentRow();
 
     if(selectedApp >= 0 && selectedApp < appList.size()) {
-         disableButtons();
+        //disable main window
+        disableButtons();
         if(!manager->runApp(appList[selectedApp])) {
             QMessageBox::information(this, "ERROR", "APP COULD NOT RUN");
         }
+        //enable buttons and update app list
         this->update();
     }
  }
@@ -81,18 +83,19 @@ void MainWindow::on_add_clicked() {
 void MainWindow::update() {
     ui->centralWidget->setEnabled(true);
 
-    ui->run->setEnabled(true); //disable run
-    ui->QuitButton->setEnabled(true);
-    ui->add->setEnabled(true);
+    //ui->run->setEnabled(true); //disable run
+    //ui->QuitButton->setEnabled(true);
+    //ui->add->setEnabled(true);
 
     this->updateAppList();
 }
 
 void MainWindow::disableButtons() {
     ui->centralWidget->setEnabled(false);
-    ui->run->setDisabled(true); //disable run
-    ui->QuitButton->setDisabled(true);
-    ui->add->setDisabled(true);
+    //these are disabled by disabling centralWidget
+    //ui->run->setDisabled(true); //disable run
+    //ui->QuitButton->setDisabled(true);
+    //ui->add->setDisabled(true);
 }
 
 void MainWindow::on_restartVRPN_clicked() //the retsart vrpn button

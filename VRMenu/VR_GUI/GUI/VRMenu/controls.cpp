@@ -1,6 +1,7 @@
 #include "controls.h"
 #include "ui_controls.h"
 #include <fstream>
+#include <iostream>
 
 Controls::Controls(QWidget *parent) :
     QDialog(parent),
@@ -15,18 +16,17 @@ Controls::~Controls()
 }
 
 void Controls::display(std::string imagePath){
-    //check to make sure image file is good
-    std::ifstream fin(imagePath.c_str());
-
-    if(fin != 0){
-        fin.close();
-        ui->image->setPixmap(QPixmap(imagePath.c_str()));
+    ui->image->setPixmap(QPixmap(imagePath.c_str()));
+/*
+    no longer necessary because of new check in app manager showImage
+    if(imagePath.empty()){
+        //if there is no imagePath use captian falcon
+        ui->image->setPixmap(QPixmap("/home/demo/Pictures/Captainfalcon.png"));
     }
     else{
-        //otherwise have captian falcon
-        ui->image->setPixmap(QPixmap("/home/henry/Pictures/CaptainFalcon.png"));
-        fin.close();
+        ui->image->setPixmap(QPixmap(imagePath.c_str()));
     }
+*/
 
 
 }

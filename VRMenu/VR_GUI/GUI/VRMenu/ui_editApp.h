@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'editApp.ui'
 **
-** Created: Tue Apr 23 11:54:54 2013
+** Created: Wed Apr 24 11:39:48 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
