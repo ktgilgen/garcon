@@ -16,7 +16,7 @@ Controls::~Controls()
 }
 
 void Controls::display(std::string imagePath){
-    ui->image->setPixmap(QPixmap(imagePath.c_str()));
+    ui->image->setPixmap(  QPixmap(  imagePath.c_str()  ).scaledToHeight(1275)  );
 /*
     no longer necessary because of new check in app manager showImage
     if(imagePath.empty()){

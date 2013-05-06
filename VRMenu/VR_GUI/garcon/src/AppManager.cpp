@@ -166,7 +166,7 @@ bool AppManager::runApp(string appName) {
         //wont be able to run app without working directory
         return false;
     }
-    std::string programPath = "cd " + apps[appName].getPathToWorkingDirectory() + "; bash run.sh" ;
+    std::string programPath = "cd " + apps[appName].getPathToWorkingDirectory() + "; ./run.sh" ;
 
     if( system( programPath.c_str() ) ){
         //app couldn't run
@@ -174,7 +174,6 @@ bool AppManager::runApp(string appName) {
     }
     //return no error condition
     return true;
-
 }
 
 //assuming that the app exists in the system TODO: get rid of this assumption

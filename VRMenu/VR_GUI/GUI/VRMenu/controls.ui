@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>583</width>
-    <height>478</height>
+    <width>799</width>
+    <height>619</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,12 +18,15 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>581</width>
-     <height>471</height>
+     <width>800</width>
+     <height>640</height>
     </rect>
    </property>
    <property name="text">
     <string>                                                                     image path invalid</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
